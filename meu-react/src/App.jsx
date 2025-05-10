@@ -12,7 +12,7 @@ function App() {
         <h1>ola gais</h1>
       </div>
     </>
-  )
+  );
 }
 
 export default App
