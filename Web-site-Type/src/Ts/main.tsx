@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client'
 import '../css/App.css'
 import App from './App.tsx'
 import Buttom from "./components/Button.tsx";
-import Modal from './components/Modal.tsx';
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -24,11 +23,10 @@ createRoot(document.getElementById("root")!).render(
             <div className="s6"></div>
           </div>
         </div>
-      </Buttom>
+      </Buttom>    
     </header>
     <main>
-      <Modal />
-    </main>
     <App />
+    </main>
   </StrictMode>
 );
