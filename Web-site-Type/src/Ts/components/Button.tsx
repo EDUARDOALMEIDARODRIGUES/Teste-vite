@@ -1,17 +1,25 @@
 import { useState } from "react";
+import Modal from "./Modal";
 
-const Buttom = () => { 
-      const [count, setCount] = useState(0);
+type ButtomSet = {
+      children : React.ReactNode;
+}
 
-      const haadleClick = () => {
-                  setCount(count + 1);
-                  alert(" morram " + count + " africanos")
-            }
-            
-            return (
-            <button type="button" onClick={haadleClick}>
-                  me apete
-            </button> 
+function Buttom({ children }: ButtomSet) {
+      const [modalIsOpen, setModal] = useState(false);
+
+      function handleModalOpen() {
+            setModal(!modalIsOpen);
+      }
+
+      return (
+            <>
+                  <button
+                        type="button"
+                        onClick={handleModalOpen}
+                  >{children}</button>
+                  <Modal isOpen={modalIsOpen} onClose={handleModalOpen}/>
+            </>
       );
 }
 
